@@ -1,0 +1,52 @@
+a,
+a:hover,
+a:link,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.s-12 {
+  font-size: 12px;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.text-light {
+  color: #ececec !important;
+}
+
+.box-container {
+  border-radius: 0.25rem;
+  background-color: white;
+  webkit-box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+  box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+.bg-soft-success {
+  color: #1dc9b7;
+  background: rgba(29, 201, 183, 0.2);
+}
+
+.bg-soft-danger {
+  color: #fd397a;
+  background-color: rgba(253, 57, 122, 0.2);
+}
+
+.bg-soft-primary {
+  color: #4d5cf2;
+  background-color: rgba(77, 92, 242, 0.2);
+}
+
+.bg-soft-warning {
+  color: #ffb822 !important;
+  background-color: rgba(255, 184, 34, 0.2);
+}

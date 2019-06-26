@@ -1,0 +1,221 @@
+---
+layout: nothingPage
+title: Airspace
+permalink: /scrollNav/
+---
+
+<head>
+  <title>Handmade navbar</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      padding-top: 100px;
+    }
+    section {
+      width: 600px;
+      margin: 300px auto;
+    }
+    .main-nav {
+      position: fixed;
+      width: 100%;
+      height: 100px;
+      top: 0;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      transition: all 500ms ease-in-out;
+    }
+    .up {
+      transform: translateY(-40px);
+    }
+
+    .small {
+      height: 40px;
+    }
+
+    .brand-title {
+      font-size: 1.5rem;
+      margin: 0.5rem;
+    }
+
+    .navbar-links ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar-links li {
+      list-style: none;
+    }
+
+    .navbar-links li a {
+      text-decoration: none;
+      color: white;
+      padding: 1rem;
+      display: block;
+    }
+
+    .navbar-links li:hover {
+      background-color: aquamarine;
+    }
+    .toggle-button {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 21px;
+    }
+
+    .toggle-button .bar {
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .toggle-button {
+        display: flex;
+      }
+      .navbar-links {
+        display: none;
+        width: 100%;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+      }
+      .navbar-links li {
+        text-align: center;
+      }
+      .navbar-links li a {
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="main-nav">
+    <div class="brand-title">Brand Name</div>
+    <a href="#" class="toggle-button" name="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+  <section>
+    <h1>Title</h1>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+  </section>
+
+  <script>
+    let nav = document.querySelector('.main-nav');
+    let position = 0;
+    console.log(nav);
+    window.addEventListener('scroll', function() {
+      /* if (window.pageYOffset > 100) {
+        nav.classList += ' small';
+      } else {
+        nav.classList = 'main-nav';
+      }*/
+
+      if (position < window.pageYOffset) {
+        position = window.pageYOffset;
+
+        if (window.pageYOffset < 150) {
+          nav.classList = 'main-nav';
+        } else if (window.pageYOffset < 400) {
+          nav.classList = 'main-nav small';
+        } else {
+          console.log('down');
+          nav.classList = 'main-nav small up';
+        }
+      } else {
+        position = window.pageYOffset;
+
+        if (window.pageYOffset < 150) {
+          nav.classList = 'main-nav';
+        } else if (window.pageYOffset < 400) {
+          nav.classList = 'main-nav small';
+        } else {
+          nav.classList = 'main-nav small';
+          console.log('up');
+        }
+      }
+    });
+
+    let toggleButton = document.getElementsByClassName('toggle-button')[0];
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+    console.log(toggleButton);
+
+    toggleButton.addEventListener('click', () => {
+      navbarLinks.classList.toggle('active');
+    });
+  </script>
+</body>

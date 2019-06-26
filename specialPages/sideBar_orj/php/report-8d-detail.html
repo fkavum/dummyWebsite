@@ -1,0 +1,721 @@
+---
+layout: nothingPage
+title: Airspace
+permalink: /sidebar2/
+---
+
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="{{ site.baseurl }}/specialPages/sideBar_orj/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/specialPages/sideBar_orj/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/specialPages/sideBar_orj/css/master.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/specialPages/sideBar_orj/css/form.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/specialPages/sideBar_orj/css/navbar.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="{{ site.baseurl }}/specialPages/sideBar_orj/css/tempusdominus-bootstrap-4.min.css" />
+    <link href="{{ site.baseurl }}/specialPages/sideBar_orj/css/eight-d-detail.css" rel="stylesheet">
+    <title>8D Kalite Yönetim Sistemi | otoedi.v3</title>
+</head>
+<body>
+<div class="page" data-root="reports" data-page="eight-d">
+{% include navbar.html %}
+    <div class="container-fluid">
+        <div class="row px-2">
+            <div class="offset-xl-2 col-xl-8 bg-light pb-4 px-26px">
+                <div class="row mt-3">
+                    <div class="col-lg-9">
+                        <div class="col-12 box-container px-4 py-3 ">
+                            <div class="row">
+                                <div class="col-lg-7 col-sm-6 box-title">
+                                    <span class="text-primary mr-3">
+                                        KONU
+                                    </span>
+                             
+                                </div>
+                                <div class="col-lg-5 col-sm-6 text-right">
+                                    <span class="btn-soft-warning s-12 medium">
+                                        <i class="mdi mdi-calendar-plus mx-1"></i> 10.10.2000
+                                    </span>
+                                    <span class="btn-soft-danger s-12 medium mx-2">
+                                        <i class="mdi mdi-calendar-plus mx-1"></i> REF.NO. 1
+                                    </span>
+                                    <span class="btn-soft-success s-12 medium d-print-none" onclick="window.location.href='/report/8d/detail/download/1'">
+                                        <i class="mdi mdi-arrow-collapse-down mx-1"></i> İNDİR
+                                    </span>
+                                </div>
+                            </div>
+                            <form id="eight-d-form" onsubmit="return false">
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="row" id="d0">
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D0</h1>
+                                            </div>
+                                            <input type="hidden" name="qm_id" value="1">
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="status_date">Durum Tarihi</label>
+                                                <div class="input-group">
+                                                    <input name="status_date" id="status_date"
+                                                           class="form-control datetimepicker-input"
+                                                           data-toggle="datetimepicker" data-target="#status_date"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-calendar"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="vehicle">Araç</label>
+                                                <div class="input-group">
+                                                    <input name="vehicle" id="vehicle"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-car-pickup"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="model">Model</label>
+                                                <div class="input-group">
+                                                    <input name="model" id="model"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-label-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="plant">Fabrika</label>
+                                                <div class="input-group">
+                                                    <input name="plant" id="plant"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-factory"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d1">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D1</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="team">Ekip</label>
+                                                <div class="input-group">
+                                                    <input name="team" id="team"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-account-group-outline"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="team_leader">Ekip Lideri</label>
+                                                <div class="input-group">
+                                                    <input name="team_leader" id="team_leader"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-account-tie"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--php foreach ($detail['d1'] as $d1 ): ?>-->
+                                        <div class="row" id="team_member_container">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="team_member">Ekip Üyesi Adı, Kısım,
+                                                    Telefon (virgül ile
+                                                    ayırınız)</label>
+                                                <div class="input-group">
+                                                    <input name="team_member[]"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text"><i
+                                                                class="mdi mdi-account-outline"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="team_member_container">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="team_member">
+                                                    Ekip Üyesi Adı, Kısım, Telefon (virgül ile ayırınız)</label>
+                                                <div class="input-group">
+                                                    <input name="team_member[]"
+                                                           class="form-control"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text"><i
+                                                                class="mdi mdi-account-outline"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="append_button d-print-none">
+                                            <div class="offset-lg-3 col-lg-6">
+                                                <button class="btn btn-outline-secondary btn-sm mt-2 rounded-circle"
+                                                        onclick="append_member()">
+                                                    <i class="mdi mdi-account-plus-outline"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d2">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D2</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="problem">Problemin Tarifi</label>
+                                                <div class="input-group">
+                                        <textarea name="problem" id="problem" rows="6"
+                                                  class="form-control">1</textarea>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-car-brake-alert"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="part_name">Parça Adı</label>
+                                                <div class="input-group">
+                                                    <input name="part_name" id="part_name"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-engine-outline"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="part_number">Parça No</label>
+                                                <div class="input-group">
+                                                    <input name="part_number" id="part_number"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-barcode-scan"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d3">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D3</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="interim_actions">Ara Tedbirler</label>
+                                                <div class="input-group">
+                                        <textarea name="interim_actions" id="interim_actions" rows="6"
+                                                  class="form-control">1</textarea>
+                                                    <div class="input-group-append"><span class="input-group-text">
+                                        <i class="mdi mdi-information-outline"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="interim_effect">Etki</label>
+                                                <div class="input-group">
+                                                    <input name="interim_effect" id="interim_effect"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-percent"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 input-container">
+                                                <label class="input-label" for="interim_app_date">Uygulama
+                                                    Tarihi</label>
+                                                <div class="input-group">
+                                                    <input name="interim_app_date" id="interim_app_date"
+                                                           class="form-control datetimepicker-input"
+                                                           data-toggle="datetimepicker" data-target="#interim_app_date"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-calendar-check-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d4">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D4</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="root_cause">Ana Nedenler</label>
+                                                <div class="input-group">
+                                        <textarea name="root_cause" id="root_cause" rows="6"
+                                                  class="form-control">1</textarea>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                      <i class="mdi mdi-information-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="root_effect">Katkı</label>
+                                                <div class="input-group">
+                                                    <input name="root_effect" id="root_effect"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-percent"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3" id="d5">
+                                                <h1 class="eight_d_header">D5</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="chosen_perm_actions">Seçilen Kalıcı Düzeltme Tedbirleri</label>
+                                                <div class="input-group">
+                                            <textarea name="chosen_perm_actions" id="chosen_perm_actions" rows="6"
+                                                      class="form-control">1</textarea>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-checkbox-marked-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="chosen_perm_effect">Etki</label>
+                                                <div class="input-group">
+                                                    <input name="chosen_perm_effect" id="chosen_perm_effect"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-percent"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 input-container">
+                                                <label class="input-label" for="chosen_perm_check">Doğrulama</label>
+                                                <div class="input-group">
+                                                    <input name="chosen_perm_check" id="chosen_perm_check"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-checkbox-marked"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d6">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D6</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="imp_perm_actions">Uygulanan Kalıcı Düzeltme Tedbirleri</label>
+                                                <div class="input-group">
+                                        <textarea name="imp_perm_actions" id="imp_perm_actions" rows="6"
+                                                  class="form-control">1</textarea>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-hammer"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="imp_perm_date">Uygulama Tarihi</label>
+                                                <div class="input-group">
+                                                    <input name="imp_perm_date" id="imp_perm_date"
+                                                           class="form-control datetimepicker-input"
+                                                           data-toggle="datetimepicker" data-target="#imp_perm_date"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                         <i class="mdi mdi-calendar-check-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d7">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D7</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="prevent_actions">Hata Tekrarlarını Önleme Faaliyetleri</label>
+                                                <div class="input-group">
+                                        <textarea name="prevent_actions" id="prevent_actions" rows="6"
+                                                  class="form-control">1</textarea>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-sync-alert"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="prevent_date">Uygulama Tarihi</label>
+                                                <div class="input-group">
+                                                    <input name="prevent_date" id="prevent_date"
+                                                           class="form-control datetimepicker-input"
+                                                           data-toggle="datetimepicker" data-target="#prevent_date"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                         <i class="mdi mdi-calendar-check-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row" id="d8">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                <h1 class="eight_d_header">D8</h1>
+                                            </div>
+                                            <div class="col-lg-6 input-container">
+                                                <label class="input-label" for="congrat">Ekibini Tebrik Et</label>
+                                                <div class="input-group">
+                                        <textarea name="congrat" id="congrat" rows="6"
+                                                  class="form-control">1</textarea>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-thumb-up-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="congrat_team_leader">Ekip Lideri</label>
+                                                <div class="input-group">
+                                                    <input name="congrat_team_leader" id="congrat_team_leader"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-account-tie"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 input-container">
+                                                <label class="input-label" for="close_date">Kapanış Tarihi</label>
+                                                <div class="input-group">
+                                                    <input name="close_date" id="close_date"
+                                                           class="form-control datetimepicker-input"
+                                                           data-toggle="datetimepicker" data-target="#close_date"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-calendar-heart"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-6 input-container">
+                                                <label class="input-label" for="reporter">Rapor Eden İsim, Kısım (virgül
+                                                    ile ayırınız)</label>
+                                                <div class="input-group">
+                                                    <input name="reporter" id="reporter"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-account-edit"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="offset-lg-3 col-lg-3 input-container">
+                                                <label class="input-label" for="reporter_phone">Telefon Numarası</label>
+                                                <div class="input-group">
+                                                    <input name="reporter_phone" id="reporter_phone"
+                                                           class="form-control"
+                                                           value="1"/>
+                                                    <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="mdi mdi-phone-outline"></i>
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <input type="hidden" name="subject"
+                                                   value="1">
+                                            <input type="hidden" name="report_id"
+                                                   value="1">
+                                            <input type="hidden" name="fk_supplier_id"
+                                                   value="1">
+                                            <input type="hidden" name="fk_buyer_id"
+                                                   value="1">
+                                            <div class="col-12">
+                                                <hr/>
+                                            </div>
+                                           
+                                                <div class="offset-lg-3 col-lg-6 text-right d-print-none">
+                                                    <button class="btn btn-warning hidden" id="btn-cancel"
+                                                            onclick="cancel();">İptal
+                                                    </button>
+                                                    <button id="btn-update-8d" class="btn btn-primary"
+                                                            onclick="update_8d()">Kaydet
+                                                    </button>
+                                                </div>
+                                      
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 my-5 py-5">
+                            <div class="my-5 py-5">
+                                &nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-print-none">
+                        <div class="col-12 box-container py-5 sticky-anchor">
+                            <a class="spy" href="#d0">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-success">D0</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        SYMPTOMS
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d1">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-primary">D1</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        TEAM
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d2">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-danger">D2</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        PROBLEM STATEMENT
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d3">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-warning">D3</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        INTERIM CONTAINMENT ACTIONS
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d4">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-success">D4</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        ROOT CAUSE & ESCAPE POINTS
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d5">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-primary">D5</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        CHOSEN PERMANENT CORRECTIVE ACTIONS
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d6">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-danger">D6</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        IMPLEMENTED PERMANENT CORRECTIVE ACTIONS
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d7">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-warning">D7</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        PREVENT ACTIONS
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="row px-3">
+                                <div class="col-3">
+                                    <div class="eight_d_anchor_separator">|</div>
+                                </div>
+                            </div>
+                            <a class="spy" href="#d8">
+                                <div class="row px-3">
+                                    <div class="col-3 text-center">
+                                        <div class="eight_d_anchor bg-soft-success">D8</div>
+                                    </div>
+                                    <div class="col-9 pl-3 s-12 medium align-self-center link">
+                                        TEAM & INDIVIDUAL
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="filter-modal" tabindex="-1" role="dialog" aria-labelledby="filter-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="filter-modal">
+
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="mdi mdi-window-close"></i> </span>
+                </button>
+            </div>
+            <div class="modal-body py-2">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <h3 class="thin text-primary"><i class="mdi mdi-filter-outline"></i>Filtre</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-magnify"></i> Ara
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/jquery-331.min.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/popper.min.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/pace-1.0.min.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/swiped-events.min.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/notification.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/master.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/moment.js"></script>
+<script src="{{ site.baseurl }}/specialPages/sideBar_orj/js/tr.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/specialPages/sideBar_orj/js/tempusdominus-bootstrap-4.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/specialPages/sideBar_orj/js/report-8d-detail.js"></script>
+</body>

@@ -1,0 +1,279 @@
+input::placeholder ,textarea::placeholder {
+    font-size:12px;
+}
+.input-group-append {
+    border-left: none;
+    border-top-right-radius: .2rem;
+    border-bottom-right-radius: .2rem;
+    font-size: 20px;
+}
+
+.input-group-sm > .custom-select, .input-group-sm > .form-control, .input-group-sm > .input-group-append > .btn, .input-group-sm > .input-group-append > .input-group-text, .input-group-sm > .input-group-prepend > .btn, .input-group-sm > .input-group-prepend > .input-group-text {
+    padding: .2rem .5rem;
+    line-height: unset;
+}
+
+.table thead th, .table tbody th {
+    font-size: 11px;
+    font-weight: 500;
+    color: #949494;
+    border-bottom: none;
+    border-top: none;
+    text-transform: uppercase;
+}
+
+.table tbody td {
+    font-size: 12px;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: middle;
+    border-top: 1px solid #f7f7f7;
+}
+
+.page .table tbody tr:hover {
+    transition: all .3s ease-out;
+    background-color: #fbfbfb !important;
+    cursor: pointer;
+}
+
+.checkbox-material {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    color: #666;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto 5px;
+    outline: none;
+    font-size: 12px;
+    top: 3px
+}
+
+.checkbox-material:focus {
+    box-shadow: 0 0 0 4px rgba(0, 204, 0, 0.2);
+}
+
+.checkbox-material:checked::before {
+    position: absolute;
+    left: 3px;
+    top: 0;
+    content: '\02714';
+    color: #fff
+}
+
+.checkbox-material:hover {
+    background-color: #dfdfdf;
+}
+
+.checkbox-material:checked {
+    background-color: #58AB61;
+    border-color: #58AB61
+}
+
+.checkbox-material-part:checked::before {
+    left: 5px;
+    top: -1px;
+    content: '\2012';
+    color: #fff;
+}
+
+.checkbox-material-part:checked {
+    background-color: darkorange;
+    border-color:darkorange
+}
+
+.btn {
+    font-weight: 500;
+}
+
+.btn-warning:hover,.btn-success:hover,.btn-danger:hover,.btn-primary:hover,.btn-secondary:hover,
+.btn-warning:focus,.btn-success:focus,.btn-danger:focus,.btn-primary:focus,.btn-secondary:focus{
+    transition: .1s all ease-out;
+}
+
+.btn-soft-warning {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255, 153, 0, 0.2);
+    color: darkorange;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-soft-success {
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(29, 201, 183, 0.1);
+    color: #1dc9b7;
+    white-space: nowrap;
+}
+
+.btn-soft-primary {
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(88, 103, 221, 0.1);
+    color: #5867dd;
+    white-space: nowrap;
+}
+
+.btn-soft-danger {
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(253,57,122,0.1);
+    color: #fd397a;
+    white-space: nowrap;
+}
+
+.input-group-text {
+    background: white;
+    padding: .35rem .75rem;
+    font-size:1.3rem;
+    line-height: 1rem;
+}
+
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle), .input-group > .input-group-append:last-child > .input-group-text:not(:last-child), .input-group > .input-group-append:not(:last-child) > .btn, .input-group > .input-group-append:not(:last-child) > .input-group-text, .input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > .input-group-text {
+    border-top-right-radius: 3.2px;
+    border-bottom-right-radius: 3.2px;
+}
+
+.form-control {
+    border-right: none
+}
+
+label {
+    color: #007BFF;
+    font-size: 14px;
+    margin-bottom: .2rem;
+    margin-top:.7rem;
+}
+
+input.disabled,select.disabled,textarea.disabled   {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: #888;
+    font-size:12px
+}
+
+.label-selector > label {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.card-input-element+.card {
+    height: calc(36px + 2*1rem);
+    color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.card-input-element+.card:hover {
+    cursor: pointer;
+}
+
+.card-input-element:checked+.card {
+    border: 2px solid var(--success);
+    color:  var(--success);
+    -webkit-transition: border .3s;
+    -o-transition: border .3s;
+    transition: border .3s;
+}
+
+.card-input-element:checked+.card::after {
+    content: '\2713';
+    color:  var(--success);
+    font-size: 24px;
+    -webkit-animation-name: fadeInCheckbox;
+    animation-name: fadeInCheckbox;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@-webkit-keyframes fadeInCheckbox {
+    from {
+        opacity: 0;
+        -webkit-transform: rotateZ(-20deg);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: rotateZ(0deg);
+    }
+}
+
+@keyframes fadeInCheckbox {
+    from {
+        opacity: 0;
+        transform: rotateZ(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateZ(0deg);
+    }
+}
+
+.has-error {
+    border:1px solid #dc3545!important;
+    color: #dc3545!important;
+}
+
+select.has-error option {
+    color: #495057 !important;
+}
+
+.soft-input .form-control {
+    border:none;
+    border-radius: 0;
+    border-bottom:1px solid #ced4da;
+}
+
+.soft-input .form-control:focus {
+    outline: 0 none !important;
+    box-shadow: none !important;
+}
+
+.soft-input .input-group-text {
+    border:none;
+    border-radius: 0;
+    border-bottom:1px solid #ced4da;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: white !important;
+    border: 1px solid #007BFF !important;
+    color:#007BFF !important;
+    margin-top: 8px !important;
+    font-size:12px
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],.select2-container--default .select2-results__option[aria-selected=true]{
+    background-color: white !important;
+    color: #007BFF !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: indianred !important;
+    font-weight: normal !important;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
+    font-size:18px;
+    line-height: 0;
+}
+
+.spinner-border-sm {
+    border-width: .1em;
+}

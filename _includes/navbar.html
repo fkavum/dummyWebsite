@@ -1,0 +1,824 @@
+<div class="row m-0 navbar-container pt-lg-5">
+    <div class="offset-xl-2 col-xl-8  px-lg-max-2">
+        <nav class="navbar navbar-expand-lg p-lg-0">
+            <a class="navbar-brand" href="/dashboard">
+                <img class="img-fluid navbar-logo" src="{{ site.baseurl }}/specialPages/sideBar/img/otoedi-light.png"
+                     alt="otoedi logo"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbars"
+                    aria-controls="navbar-collapsed" aria-expanded="false" aria-label="Toggle navigation" hidden>
+                <i class="mdi mdi-dots-vertical"></i>
+            </button>
+            <button class="navbar-toggler" type="button" data-toggle="modal" data-target="#navbar-modal" data-backdrop="false">
+                <i class="mdi mdi-dots-horizontal s-26"></i>
+            </button>
+            <div class="collapse navbar-collapse navbars">
+                <ul class="navbar-nav ml-auto" id="top-navbar">
+                    <li class="nav-item mr-3">
+                        <form method="get" action="/inbox" id="quick-search">
+                        <div class="input-group input-group-sm mt-12px">
+                            <input class="form-control form-control-sm" id="quick-search" name="quick-search"
+                                   placeholder="Sipariş ara" />
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="mdi mdi-feature-search-outline"></i>
+                                </span>
+                            </div>
+                        </div>
+                        </form>
+                    </li>
+                    <li class="nav-item mx-3 mx-lg-1">
+                        <a class="nav-link" href="/message/view">
+                            <i class="mdi mdi-comment-text-multiple-outline s-26"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-3 mx-lg-1 dropdown" id="notification-container">
+                        <a class="nav-link" href="#" id="notification" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-bell-outline"></i>
+                        </a>
+                        <form>
+                        <div class="dropdown-menu dropdown-menu-right notification-window"
+                             aria-labelledby="notification">
+                           
+                                <div class="dropdown-item" id="notification-1"
+                                     data-seen="1" data-id="1">
+                                    <div class="row text-muted">
+                                        <div class="col-1 text-center align-self-center"><i
+                                                    class="s-22 mdi mdi-information-outline"></i>
+                                        </div>
+                                        <div class="col-11 px-3 text-wrap pt-2">123</div>
+                                        <div class="col-12 text-right">
+                                            <small>10.10.2000</small>
+                                        </div>
+                                        <i class="mdi mdi-circle-slice-8 notification-marker link"
+                                           onclick="mark(1)"></i>
+                                    </div>
+                                </div>
+                          
+                                <div class="dropdown-item text-center text-info" id="load-ntf-more">
+                                    <i class="mdi mdi-dots-horizontal s-22"
+                                       onclick="get_notifications('1')"></i>
+                                </div>
+                          
+                                <div class="dropdown-item">
+                                    <div class="row">
+                                        <div class="col-1 text-center align-self-center"><i class="s-22 mdi mdi-check"></i>
+                                        </div>
+                                        <div class="col-11 px-3 text-wrap pt-2">Hiç bildirim yok.</div>
+                                        <div class="col-12 text-right">
+                                            <small></small>
+                                        </div>
+                                    </div>
+                                </div>
+                         
+
+                        </div>
+                        </form>
+                    </li>
+                    <li class="nav-item mx-3 mx-lg-1 dropdown">
+                        <a class="nav-link" href="#" id="language" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img height="22" class="mb-1" src="{{ site.baseurl }}/specialPages/sideBar/img/tr-flag.png" alt="English flag">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right notification-window" aria-labelledby="language">
+                            <div class="dropdown-item py-3">
+                                <div class="row text-muted">
+                                    <div class="col-2 text-center align-self-center"><img height="28"
+                                                                                          class="rounded-circle"
+                                                                                          src="{{ site.baseurl }}/specialPages/sideBar/img/uk-flag.png"
+                                                                                          alt="English flag">
+                                    </div>
+                                    <div class="col-10 px-3 align-self-center"> English</div>
+                                </div>
+                            </div>
+                            <div class="dropdown-item py-3">
+                                <div class="row text-muted">
+                                    <div class="col-2 text-center align-self-center"><img height="28"
+                                                                                          class="rounded-circle"
+                                                                                          src="{{ site.baseurl }}/specialPages/sideBar/img/tr-flag.png"
+                                                                                          alt="Türk Bayrağı">
+                                    </div>
+                                    <div class="col-10 px-3 align-self-center"> Türkçe</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-3 mx-lg-1 dropdown">
+                        <a class="nav-link" href="#" id="profile" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!--                            <img class="rounded-circle navbar-img" src="http://yuux.net/img/pp.jpg"-->
+                            <!--                                 alt="Profile picture">-->
+                            <i class="mdi mdi-account-settings s-26"></i>
+                        </a>
+                        <div class="dropdown-menu user-profile dropdown-menu-right" aria-labelledby="profile">
+                            <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-account-circle-outline"></i>
+                                    </div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center medium"> dcx123</div>
+                                </div>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/settings/user/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2  text-center"><i class="s-26 mdi mdi-account-edit"></i>
+                                    </div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Kullanıcı Ayarları
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item disabled" href="/settings/system/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-settings-outline"></i>
+                                    </div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Sistem Ayarları
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="/logout">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2  text-center"><i class="s-26 mdi mdi-logout-variant"></i>
+                                    </div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Çıkış</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg mt-lg-4 mb-5 mb-lg-0" id="bottom-navbar">
+            <div class="collapse navbar-collapse navbars">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="document-flow" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-swap-vertical"></i> Doküman Akışı
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="document-flow">
+                            <a class="dropdown-item" href="/inbox" data-page="inbox">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-arrow-collapse-down"></i>
+                                    </div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Gelen Kutusu</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="/outbox" data-page="outbox">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-arrow-collapse-up"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Giden Kutusu</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="order-management" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-cart-outline"></i> Sipariş Yönetimi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="order-management">
+                            <a class="dropdown-item" href="/order/unconfirmed/view" data-page="order-unconfirmed">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2 text-center"><i
+                                                class="s-26 mdi mdi-timer-sand"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Onaylanmayan
+                                        Siparişler
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="/order/confirmed/view" data-page="order-confirmed">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-check-all"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Onaylanan
+                                        Siparişler
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item text-danger" href="/order/rejected/view" data-page="order-rejected">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-cancel"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center"> Reddedilen
+                                        Siparişler
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="transport-management" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-truck"></i> Sevk Yönetimi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="transport-management">
+                            <a class="dropdown-item" href="/packaging/list/view/ready" data-page="packaging-view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-package-variant"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Paketleme</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="/despatch/list/view" data-page="despatch-view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-truck-trailer"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Yüklemeler</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="/despatch/schedule-planning/view"
+                               data-page="schedule-planning">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-calendar-multiselect"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Planlama Takvimi
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" href="/shipment/list/view" data-page="shipment-view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-truck-fast"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Sevkiyatlar</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="product-management" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-package-variant"></i> Ürün/Paket Yönetimi
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="product-management">
+                            <a class="dropdown-item" data-page="product" href="/product-management/product/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-tag-text-outline"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Ürünler</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" data-page="package" href="/product-management/package/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="s-26 mdi mdi-package"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Paketler</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="reports" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-chart-line"></i> Raporlar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="reports">
+                            <a class="dropdown-item" data-page="eight-d" href="/report/8d/list/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="mdi mdi-engine-outline s-26"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">8D Kalite Yönetimi
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" data-page="order-fulfillment"
+                               href="/report/order-fulfillment/list/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="mdi mdi-cart-arrow-right s-26"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Sipariş Karşılama
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" data-page="shipment-timing"
+                               href="/report/shipment-timing/list/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="mdi mdi-truck-check s-26"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Sevkiyat Zamanlama
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" data-page="order-confirmation"
+                               href="/report/order-confirmation/list/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="mdi mdi-progress-clock s-26"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Sipariş Onay</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item" data-page="supplier-tracing"
+                               href="/report/supplier-tracing/list/view">
+                                <div class="row">
+                                    <div class="col-1 col-lg-2 col-lg-2  text-center"><i
+                                                class="mdi mdi-factory s-26"></i></div>
+                                    <div class="col-11 col-lg-10 px-2 text-left align-self-center">Tedarikçi İzleme
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="col-12 p-0 navbar-wave">
+        <div style="height: 50px; overflow: hidden;">
+            <svg style="pointer-events: none" class="wave" width="100%" height="50px" preserveAspectRatio="none"
+                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
+                <defs>
+                    <style>
+                        .a {
+                            fill: none;
+                        }
+
+                        .b {
+                            clip-path: url(#a);
+                        }
+
+                        .c,
+                        .d {
+                            fill: #f0eff5;
+                        }
+
+                        .d {
+                            opacity: 0.5;
+                            isolation: isolate;
+                        }
+                    </style>
+                    <clipPath id="a">
+                        <rect class="a" width="1920" height="75"></rect>
+                    </clipPath>
+                </defs>
+                <title>wave</title>
+                <g class="b">
+                    <path class="c"
+                          d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"></path>
+                </g>
+                <g class="b">
+                    <path class="d"
+                          d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"></path>
+                </g>
+                <g class="b">
+                    <path class="d"
+                          d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"></path>
+                </g>
+                <g class="b">
+                    <path class="d"
+                          d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="navbar-modal" tabindex="-1" role="dialog" aria-labelledby="navbar-modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="filter-modal">
+                    <img class="img-fluid navbar-logo" src="{{ site.baseurl }}/specialPages/sideBar/img/otoedi-dark.png" alt="otoedi logo">
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="mdi mdi-window-close"></i> </span>
+                </button>
+            </div>
+            <form method="get">
+                <div class="modal-body py-2">
+                    <div class="container-fluid">
+                        <div class="row py-4">
+                            <div class="col-12">
+                                <form method="get" action="/inbox" id="quick-search">
+                                    <div class="input-group">
+                                        <input class="form-control" id="quick-search" name="quick-search"
+                                               placeholder="Sipariş ara" />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="mdi mdi-feature-search-outline"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12" hidden>
+                                <ul class="navbar-nav my-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/message/view">
+                                            <i class="mdi mdi-comment-text-multiple-outline s-26"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown" id="notification-container">
+                                        <a class="nav-link" href="#" id="notification" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-bell-outline s-26"></i>
+                                        </a>
+                                        <form>
+                                            <div class="dropdown-menu dropdown-menu-right notification-window"
+                                                 aria-labelledby="notification">
+                                                
+                                                <!--if (!empty($ntf)): foreach ($ntf as $item): ?>-->
+                                                    <div class="dropdown-item" id="notification-1"
+                                                         data-seen="1" data-id="1">
+                                                        <div class="row text-success">
+                                                            <div class="col-2 text-center align-self-center"><i
+                                                                        class="s-22 mdi mdi-information-outline"></i>
+                                                            </div>
+                                                            <div class="col-11 px-3 text-wrap pt-2">123</div>
+                                                            <div class="col-12 text-right">
+                                                                <small>10.10.2000</small>
+                                                            </div>
+                                                            <i class="mdi mdi-circle-outline notification-marker link"
+                                                               onclick="mark(1)"></i>
+                                                        </div>
+                                                    </div>
+                                                
+                                                        <div class="dropdown-item text-center text-info" id="load-ntf-more">
+                                                            <i class="mdi mdi-dots-horizontal s-22"
+                                                               onclick="get_notifications('1')"></i>
+                                                        </div>
+                                            
+                                                    <div class="dropdown-item">
+                                                        <div class="row">
+                                                            <div class="col-2 text-center align-self-center"><i class="s-22 mdi mdi-check"></i>
+                                                            </div>
+                                                            <div class="col-10 px-3 text-wrap pt-2">Hiç bildirim yok.</div>
+                                                            <div class="col-12 text-right">
+                                                                <small></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                        
+
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="language" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img height="22" class="mt-2" src="{{ site.baseurl }}/specialPages/sideBar/img/tr-flag.png" alt="English flag">
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right notification-window" aria-labelledby="language">
+                                            <div class="dropdown-item py-3">
+                                                <div class="row text-muted">
+                                                    <div class="col-2 text-center align-self-center"><img height="28"
+                                                                                                          class="rounded-circle"
+                                                                                                          src="{{ site.baseurl }}/specialPages/sideBar/img/uk-flag.png"
+                                                                                                          alt="English flag">
+                                                    </div>
+                                                    <div class="col-10 px-3 align-self-center"> English</div>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-item py-3">
+                                                <div class="row text-muted">
+                                                    <div class="col-2 text-center align-self-center"><img height="28"
+                                                                                                          class="rounded-circle"
+                                                                                                          src="{{ site.baseurl }}/specialPages/sideBar/img/tr-flag.png"
+                                                                                                          alt="Türk Bayrağı">
+                                                    </div>
+                                                    <div class="col-10 px-3 align-self-center"> Türkçe</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="profile" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <!--                            <img class="rounded-circle navbar-img" src="http://yuux.net/img/pp.jpg"-->
+                                            <!--                                 alt="Profile picture">-->
+                                            <i class="mdi mdi-account-settings s-26"></i>
+                                        </a>
+                                        <div class="dropdown-menu user-profile dropdown-menu-right" aria-labelledby="profile">
+                                            <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-account-circle-outline"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center medium"> dcx123</div>
+                                                </div>
+                                            </a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/settings/user/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i class="s-26 mdi mdi-account-edit"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Kullanıcı Ayarları
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item disabled" href="/settings/system/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-settings-outline"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Sistem Ayarları
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/logout">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i class="s-26 mdi mdi-logout-variant"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Çıkış</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12 my-3">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="profile" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <!--                            <img class="rounded-circle navbar-img" src="http://yuux.net/img/pp.jpg"-->
+                                            <!--                                 alt="Profile picture">-->
+                                            <i class="mdi mdi-account-settings"></i> dcx123
+                                        </a>
+                                        <div class="dropdown-menu user-profile dropdown-menu-right" aria-labelledby="profile">
+                                            <a class="dropdown-item" href="/settings/user/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i class="s-26 mdi mdi-account-edit"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Kullanıcı Ayarları
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item disabled" href="/settings/system/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-settings-outline"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Sistem Ayarları
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/logout">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i class="s-26 mdi mdi-logout-variant"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Çıkış</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/message/view">
+                                            <i class="mdi mdi-comment-text-multiple-outline"></i> Mesajlar
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown" id="notification-container">
+                                        <a class="nav-link dropdown-toggle" href="#" id="notification" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-bell-outline"></i> Bildirimler
+                                        </a>
+                                        <form>
+                                            <div class="dropdown-menu dropdown-menu-right notification-window"
+                                                 aria-labelledby="notification">
+                                               
+                                                    <div class="dropdown-item" id="notification-1"
+                                                         data-seen="1" data-id="1">
+                                                        <div class="row text-success">
+                                                            <div class="col-2 text-center align-self-center"><i
+                                                                        class="s-22 mdi mdi-bullhorn-outline"></i>
+                                                            </div>
+                                                            <div class="col-11 px-3 text-wrap pt-2">123</div>
+                                                            <div class="col-12 text-right">
+                                                                <small>10.10.2000</small>
+                                                            </div>
+                                                            <i class="mdi mdi-circle-slice-8 notification-marker link"
+                                                               onclick="mark(1)"></i>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                        <div class="dropdown-item text-center text-info" id="load-ntf-more">
+                                                            <i class="mdi mdi-dots-horizontal s-22"
+                                                               onclick="get_notifications('1')"></i>
+                                                        </div>
+                                                   
+                                                    <div class="dropdown-item">
+                                                        <div class="row">
+                                                            <div class="col-2 text-center align-self-center"><i class="s-22 mdi mdi-check"></i>
+                                                            </div>
+                                                            <div class="col-10 px-3 text-wrap pt-2">Hiç bildirim yok.</div>
+                                                            <div class="col-12 text-right">
+                                                                <small></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                               
+
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="language" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img height="16" class="" src="{{ site.baseurl }}/specialPages/sideBar/img/tr-flag.png" alt="English flag"> Dil Seçenekleri
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right notification-window" aria-labelledby="language">
+                                            <div class="dropdown-item py-3">
+                                                <div class="row text-muted">
+                                                    <div class="col-2 text-center align-self-center"><img height="28"
+                                                                                                          class="rounded-circle"
+                                                                                                          src="{{ site.baseurl }}/specialPages/sideBar/img/uk-flag.png"
+                                                                                                          alt="English flag">
+                                                    </div>
+                                                    <div class="col-10 px-3 align-self-center"> English</div>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-item py-3">
+                                                <div class="row text-muted">
+                                                    <div class="col-2 text-center align-self-center"><img height="28"
+                                                                                                          class="rounded-circle"
+                                                                                                          src="{{ site.baseurl }}/specialPages/sideBar/img/tr-flag.png"
+                                                                                                          alt="Türk Bayrağı">
+                                                    </div>
+                                                    <div class="col-10 px-3 align-self-center"> Türkçe</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="document-flow" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-swap-vertical"></i> Doküman Akışı
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="document-flow">
+                                            <a class="dropdown-item" href="/inbox" data-page="inbox">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-arrow-collapse-down"></i>
+                                                    </div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Gelen Kutusu</div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/outbox" data-page="outbox">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-arrow-collapse-up"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Giden Kutusu</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="order-management" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-cart-outline"></i> Sipariş Yönetimi
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="order-management">
+                                            <a class="dropdown-item" href="/order/unconfirmed/view" data-page="order-unconfirmed">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2 text-center"><i
+                                                                class="s-26 mdi mdi-timer-sand"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Onaylanmayan
+                                                        Siparişler
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/order/confirmed/view" data-page="order-confirmed">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-check-all"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Onaylanan
+                                                        Siparişler
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item text-danger" href="/order/rejected/view" data-page="order-rejected">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-cancel"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center"> Reddedilen
+                                                        Siparişler
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="transport-management" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-truck"></i> Sevk Yönetimi
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="transport-management">
+                                            <a class="dropdown-item" href="/packaging/list/view/ready" data-page="packaging-view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-package-variant"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Paketleme</div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/despatch/list/view" data-page="despatch-view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-truck-trailer"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Yüklemeler</div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/despatch/schedule-planning/view"
+                                               data-page="schedule-planning">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-calendar-multiselect"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Planlama Takvimi
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="/shipment/list/view" data-page="shipment-view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-truck-fast"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Sevkiyatlar</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="product-management" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-package-variant"></i> Ürün/Paket Yönetimi
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="product-management">
+                                            <a class="dropdown-item" data-page="product" href="/product-management/product/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-tag-text-outline"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Ürünler</div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" data-page="package" href="/product-management/package/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="s-26 mdi mdi-package"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Paketler</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="reports" role="button" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">
+                                            <i class="mdi mdi-chart-line"></i> Raporlar
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="reports">
+                                            <a class="dropdown-item" data-page="eight-d" href="/report/8d/list/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="mdi mdi-engine-outline s-26"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">8D Kalite Yönetimi
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" data-page="order-fulfillment"
+                                               href="/report/order-fulfillment/list/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="mdi mdi-cart-arrow-right s-26"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Sipariş Karşılama
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" data-page="shipment-timing"
+                                               href="/report/shipment-timing/list/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="mdi mdi-truck-check s-26"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Sevkiyat Zamanlama
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" data-page="order-confirmation"
+                                               href="/report/order-confirmation/list/view">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="mdi mdi-progress-clock s-26"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Sipariş Onay</div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" data-page="supplier-tracing"
+                                               href="/">
+                                                <div class="row">
+                                                    <div class="col-2 col-lg-2 col-lg-2  text-center"><i
+                                                                class="mdi mdi-factory s-26"></i></div>
+                                                    <div class="col-10 col-lg-10 px-2 text-left align-self-center">Tedarikçi İzleme
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    Her hakkı saklıdır. 2019
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
