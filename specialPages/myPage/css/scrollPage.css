@@ -1,0 +1,93 @@
+/* Scrolll body baby */
+/*eight-d-details*/
+.eight_d_header {
+    color: #dadada;
+    margin-top: 8px;
+    padding-left: 0.5rem;
+}
+
+.eight_d_anchor {
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-weight: 600;
+    font-family: monospace;
+    text-align: center;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+}
+
+.eight_d_anchor_separator {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 46px;
+    color: #dadada;
+    text-align: center;
+}
+
+.sticky-anchor {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky !important;
+    top: 0.8rem;
+}
+
+
+/* master css */
+
+.scroll-active .link {
+    text-decoration: none;
+    color: blue;
+}
+
+.scroll-button div:hover {
+    text-decoration: none;
+    background-color: orange;
+    opacity: 0.3;
+}
+
+.s-12 {
+    font-size: 12px;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #ececec !important;
+}
+
+.box-container {
+    border-radius: 0.25rem;
+    background-color: white;
+    webkit-box-shadow: 0 0 13px 0 rgba(82, 63, 105, 1);
+    box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.7);
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.bg-soft-success {
+    color: #1dc9b7;
+    background: rgba(29, 201, 183, 0.2);
+}
+
+.bg-soft-danger {
+    color: #fd397a;
+    background-color: rgba(253, 57, 122, 0.2);
+}
+
+.bg-soft-primary {
+    color: #4d5cf2;
+    background-color: rgba(77, 92, 242, 0.2);
+}
+
+.bg-soft-warning {
+    color: #ffb822 !important;
+    background-color: rgba(255, 184, 34, 0.2);
+}

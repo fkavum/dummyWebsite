@@ -1,32 +1,45 @@
 // Simle Responsive Navbar Baby
 // Shrink the navbar
 let nav = document.querySelector('.main-nav');
+let brandTitle = document.querySelector('.brand-title');
 let position = 0;
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', function() {
   //console.log(position);
-  if (position < window.pageYOffset) {
+  if (position < window.pageYOffset + 1) {
     position = window.pageYOffset;
 
     if (window.pageYOffset < 150) {
-      nav.classList = 'main-nav';
+      bigNav();
     } else if (window.pageYOffset < 400) {
-      nav.classList = 'main-nav small-nav';
+      smallNav();
     } else {
-      nav.classList = 'main-nav small-nav up';
+      closeNav();
     }
   } else {
     position = window.pageYOffset;
 
     if (window.pageYOffset < 150) {
-      nav.classList = 'main-nav';
+      bigNav();
     } else if (window.pageYOffset < 400) {
-      nav.classList = 'main-nav small-nav';
+      smallNav();
     } else {
-      nav.classList = 'main-nav small-nav';
+      smallNav();
     }
   }
 });
+
+function bigNav() {
+  nav.classList = 'main-nav';
+  brandTitle.classList = 'brand-title';
+}
+function smallNav() {
+  nav.classList = 'main-nav small-nav';
+  brandTitle.classList = 'brand-title small-brand-title';
+}
+function closeNav() {
+  nav.classList = 'main-nav small-nav up';
+}
 
 // Hamburger Menu
 let toggleButton = document.getElementsByClassName('hamburger-button')[0];
@@ -37,7 +50,7 @@ toggleButton.addEventListener('click', () => {
   navbarTabs.classList.toggle('hamburger-active');
 });
 
-window.addEventListener('click', function (e) {
+window.addEventListener('click', function(e) {
   if (navbarTabs.classList.contains('hamburger-active')) {
     if (navbarTabs.contains(e.target) || toggleButton.contains(e.target)) {
       this.console.log('divdeyim');
@@ -47,15 +60,12 @@ window.addEventListener('click', function (e) {
   }
 });
 
-
 // Scrolling
-
-
 
 let scrollButton = document.querySelectorAll('.scroll-button');
 let bodySection = document.querySelectorAll('.scroll-section');
 
-scrollButton.forEach(function (element, index) {
+scrollButton.forEach(function(element, index) {
   element.addEventListener('click', () => smoothScroll(bodySection[index]));
 });
 
@@ -88,8 +98,7 @@ function smoothScroll(
       let speedToLimitSpeed = speedLimit - speed;
       let acceleratedSpeed = speed * acceleration;
 
-      if (speedToLimitSpeed - speed > acceleratedSpeed)
-        speed *= acceleration;
+      if (speedToLimitSpeed - speed > acceleratedSpeed) speed *= acceleration;
       else speed = speedLimit;
 
       if (toTop && distanceToTarget >= 0) return;
@@ -99,22 +108,24 @@ function smoothScroll(
   scroll();
 }
 
-
 // coloring
-(function () {
+(function() {
   //    'use strict';
 
-  window.onscroll = function () {
+  window.onscroll = function() {
     var scrollPosition =
       document.documentElement.scrollTop || document.body.scrollTop;
 
-    bodySection.forEach(function (section, index) {
+    bodySection.forEach(function(section, index) {
       if (section.offsetTop <= scrollPosition + 1) {
         document
           .querySelector('.scroll-active')
           .setAttribute('class', 'scroll-button');
 
-        scrollButton[index].setAttribute('class', 'scroll-button scroll-active');
+        scrollButton[index].setAttribute(
+          'class',
+          'scroll-button scroll-active'
+        );
       }
     });
   };

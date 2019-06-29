@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&subset=latin-ext');
+/* Responsive simple navbar baby */
+
+.main-nav {
+    position: fixed;
+    width: 100%;
+    height: 165px;
+    top: 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    transition: all 500ms ease-in-out;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.brand-title {
+    font-size: 7vw;
+    font-weight: 100;
+    margin: 0.5rem;
+    font-family: 'Freestyle Script';
+    padding-left: 2 rem;
+    font-style: normal;
+    transition: font-size 500ms ease-in-out;
+}
+
+.navbar-tabs ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-tabs li {
+    list-style: none;
+    background-color: #333;
+}
+
+.navbar-tabs li a {
+    text-decoration: none;
+    color: white;
+    padding-right: 1rem;
+    display: block;
+}
+
+.navbar-tabs li:hover {
+    background-color: aquamarine;
+}
+
+/*
+small navbar
+*/
+.small-nav {
+    height: 55px;
+}
+
+.small-brand-title {
+    font-size: 3vh;
+}
+
+/* close navbar  */
+.up {
+    transform: translateY(-55px);
+}
+
+/* Hamburger Stuff */
+.hamburger-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.hamburger-button .hamburger-button-line {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .hamburger-button {
+        display: flex;
+    }
+
+    .navbar-tabs {
+        display: none;
+        width: 100%;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-tabs ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-tabs li {
+        text-align: center;
+    }
+
+    .navbar-tabs li a {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-tabs.hamburger-active {
+        display: flex;
+    }
+}

@@ -1,0 +1,32 @@
+/* background */
+
+#d0 {
+  background: url(../img/leaf.jpg) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+#d1 {
+  background: url(../img/sasuke.jpg) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-clip: content-box;
+  opacity: 0.5;
+}
+
+#d2 {
+  background: url(../img/grass.jpg) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-clip: content-box;
+}
+
+#d3 {
+  background: url(../img/fog.jpg) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+}
