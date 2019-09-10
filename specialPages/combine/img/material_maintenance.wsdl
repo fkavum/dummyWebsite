@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://wsx.map.com.tr/material_maintenance.php?wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://wsx.map.com.tr/material_maintenance.php?wsdl">
+<types>
+<xsd:schema elementFormDefault="qualified" targetNamespace="https://wsx.map.com.tr/material_maintenance.php?wsdl">
+ <xsd:complexType name="ProductList">
+  <xsd:sequence>
+   <xsd:element name="Product" type="xsd:string" minOccurs="0"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="MaterialCodeList">
+  <xsd:sequence>
+   <xsd:element name="MaterialCode" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="ItemName" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="CodeEan" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="CodeArticle" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="UOM_Quantity" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="UOM_Price" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="UOM_Base" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="QtyPP" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="QtyPB" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="Calculation" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="ArticleEAN" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="Delist" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="Rejection" type="xsd:string" minOccurs="0"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="glnResult">
+  <xsd:sequence>
+   <xsd:element name="partyGLN" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="customerName" type="xsd:string" minOccurs="0"/>
+   <xsd:element name="partyName" type="xsd:string" minOccurs="0"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="glnResultArray">
+  <xsd:sequence>
+   <xsd:element name="glnResultArray" type="tns:glnResult" minOccurs="1" maxOccurs="unbounded"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="IYP.AuthRequestType">
+  <xsd:all>
+   <xsd:element name="user" type="xsd:string" form="unqualified"/>
+   <xsd:element name="pass" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="IYP.AuthResponseType">
+  <xsd:all>
+   <xsd:element name="authCode" type="xsd:string" form="unqualified"/>
+   <xsd:element name="status" type="xsd:string" form="unqualified"/>
+   <xsd:element name="description" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="IYP.MaterialInfoRequestType">
+  <xsd:all>
+   <xsd:element name="authCode" type="xsd:string" form="unqualified"/>
+   <xsd:element name="customerGLN" type="xsd:string" form="unqualified"/>
+   <xsd:element name="MaterialCodeList" type="tns:MaterialCodeList" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="IYP.MaterialInfoResponseType">
+  <xsd:all>
+   <xsd:element name="statusCode" type="xsd:string" form="unqualified"/>
+   <xsd:element name="statusNote" type="xsd:string" form="unqualified"/>
+   <xsd:element name="Results" type="tns:ProductList" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="IYP.GlnTransformRequestType">
+  <xsd:all>
+   <xsd:element name="authCode" type="xsd:string" form="unqualified"/>
+   <xsd:element name="sapCustomerCode" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="IYP.GlnTransformResponseType">
+  <xsd:all>
+   <xsd:element name="statusCode" type="xsd:string" form="unqualified"/>
+   <xsd:element name="statusNote" type="xsd:string" form="unqualified"/>
+   <xsd:element name="Results" type="tns:glnResultArray" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:element name="IYP.Auth" type="tns:IYP.AuthRequestType"/>
+ <xsd:element name="IYP.AuthResponse" type="tns:IYP.AuthResponseType"/>
+ <xsd:element name="IYP.MaterialInfo" type="tns:IYP.MaterialInfoRequestType"/>
+ <xsd:element name="IYP.MaterialInfoResponse" type="tns:IYP.MaterialInfoResponseType"/>
+ <xsd:element name="IYP.GlnTransform" type="tns:IYP.GlnTransformRequestType"/>
+ <xsd:element name="IYP.GlnTransformResponse" type="tns:IYP.GlnTransformResponseType"/>
+</xsd:schema>
+</types>
+<message name="IYP.AuthRequest">
+  <part name="AuthInput" element="tns:IYP.Auth" /></message>
+<message name="IYP.AuthResponse">
+  <part name="AuthResponse" element="tns:IYP.AuthResponse" /></message>
+<message name="IYP.MaterialInfoRequest">
+  <part name="MInput" element="tns:IYP.MaterialInfo" /></message>
+<message name="IYP.MaterialInfoResponse">
+  <part name="MResponse" element="tns:IYP.MaterialInfoResponse" /></message>
+<message name="IYP.GlnTransformRequest">
+  <part name="GTInput" element="tns:IYP.GlnTransform" /></message>
+<message name="IYP.GlnTransformResponse">
+  <part name="GTResponse" element="tns:IYP.GlnTransformResponse" /></message>
+<portType name="MaterialMaintenancePortType">
+  <operation name="IYP.Auth">
+    <documentation>Authenticate Method</documentation>
+    <input message="tns:IYP.AuthRequest"/>
+    <output message="tns:IYP.AuthResponse"/>
+  </operation>
+  <operation name="IYP.MaterialInfo">
+    <documentation>Get Article Code of Item</documentation>
+    <input message="tns:IYP.MaterialInfoRequest"/>
+    <output message="tns:IYP.MaterialInfoResponse"/>
+  </operation>
+  <operation name="IYP.GlnTransform">
+    <documentation>Get partyGLN of customer</documentation>
+    <input message="tns:IYP.GlnTransformRequest"/>
+    <output message="tns:IYP.GlnTransformResponse"/>
+  </operation>
+</portType>
+<binding name="MaterialMaintenanceBinding" type="tns:MaterialMaintenancePortType">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="IYP.Auth">
+    <soap:operation soapAction="https://wsx.map.com.tr/material_maintenance.php?wsdl/IYP.Auth" style="document"/>
+    <input><soap:body use="literal" namespace="https://wsx.map.com.tr/material_maintenance.php?wsdl"/></input>
+    <output><soap:body use="literal" namespace="https://wsx.map.com.tr/material_maintenance.php?wsdl"/></output>
+  </operation>
+  <operation name="IYP.MaterialInfo">
+    <soap:operation soapAction="https://wsx.map.com.tr/material_maintenance.php?wsdl/IYP.MaterialInfo" style="document"/>
+    <input><soap:body use="literal" namespace="https://wsx.map.com.tr/material_maintenance.php?wsdl"/></input>
+    <output><soap:body use="literal" namespace="https://wsx.map.com.tr/material_maintenance.php?wsdl"/></output>
+  </operation>
+  <operation name="IYP.GlnTransform">
+    <soap:operation soapAction="https://wsx.map.com.tr/material_maintenance.php?wsdl/IYP.GlnTransform" style="document"/>
+    <input><soap:body use="literal" namespace="https://wsx.map.com.tr/material_maintenance.php?wsdl"/></input>
+    <output><soap:body use="literal" namespace="https://wsx.map.com.tr/material_maintenance.php?wsdl"/></output>
+  </operation>
+</binding>
+<service name="MaterialMaintenance">
+  <port name="MaterialMaintenancePort" binding="tns:MaterialMaintenanceBinding">
+    <soap:address location="https://wsx.map.com.tr:443/material_maintenance.php"/>
+  </port>
+</service>
+</definitions>
