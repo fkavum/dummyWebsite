@@ -1,0 +1,149 @@
+/* Scrolll body baby */
+/*eight-d-details*/
+.eight_d_header {
+    color: #dadada;
+    margin-top: 8px;
+    padding-left: 0.5rem;
+}
+
+.eight_d_anchor {
+    font-size: 18px;
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-weight: 600;
+    font-family: monospace;
+    text-align: center;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+}
+
+.eight_d_anchor_separator {
+
+    width: 46px;
+    color: #dadada;
+    text-align: center;
+
+}
+
+.sticky-anchor {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky !important;
+    top: 0.8rem;
+
+}
+
+
+/* master css */
+
+.scroll-active .link {
+    text-decoration: none;
+    color: blue;
+}
+
+.scroll-button div:hover {
+    text-decoration: none;
+    background-color: grey;
+    opacity: 0.1;
+}
+
+.s-12 {
+    font-size: 12px;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.link {
+    cursor: pointer;
+    display: none;
+}
+
+.text-light {
+    color: #ececec !important;
+}
+
+.box-container {
+    border-radius: 0.25rem;
+    background-color: white;
+    webkit-box-shadow: 0 0 13px 0 rgba(82, 63, 105, 1);
+    box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.7);
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.bg-soft-success {
+    color: #1dc9b7;
+    background: rgba(29, 201, 183, 0.2);
+}
+
+.bg-soft-danger {
+    color: #fd397a;
+    background-color: rgba(253, 57, 122, 0.2);
+}
+
+.bg-soft-primary {
+    color: #4d5cf2;
+    background-color: rgba(77, 92, 242, 0.2);
+}
+
+.bg-soft-warning {
+    color: #ffb822 !important;
+    background-color: rgba(255, 184, 34, 0.2);
+}
+
+.ppx-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    transform: scaleX(0.65);
+}
+
+.ppl-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+}
+
+.np-3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* resizing scroll side        992-768-576-normal*  min-widt bu sayıdan büyükler için demek */
+
+@media only screen and (min-width: 768px) {
+
+
+    .link {
+        cursor: pointer;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+
+    .ppx-3 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+
+        transform: scale(1);
+    }
+
+    .ppl-3 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .eight_d_anchor_separator {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 46px;
+        color: #dadada;
+        text-align: center;
+
+    }
+
+}

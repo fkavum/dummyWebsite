@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /*max-width: 100%;
+    overflow-x: hidden;*/
+}
+
+body {
+    padding-top: 150px;
+}
+
+section {
+    margin: 300px auto;
+}

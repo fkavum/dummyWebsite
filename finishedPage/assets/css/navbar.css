@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Prompt:300,400,500&subset=latin-ext');
+
+/* Responsive simple navbar baby */
+
+.main-nav {
+    position: fixed;
+    width: 100%;
+    height: 160px;
+    top: 0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /*align-items: center;*/
+    background-color: white;
+    color: black;
+    transition: all 150ms ease-in-out;
+    z-index: 1;
+}
+
+.brand-area {
+
+    margin: 1rem;
+    padding-left: 2 rem;
+    font-style: normal;
+
+}
+
+.brand-name {
+    text-decoration: none;
+    color: black;
+    /*font-family: 'Freestyle Script';*/
+    font-family: 'Magneto';
+    font-size: 42px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: font-size 150ms ease-in-out;
+    font-stretch: 100%;
+
+}
+
+.brand-name:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.brand-title {
+    font: italic 13px/110% 'Old Standard TT';
+    color: #999;
+    font-weight: 400;
+    transition: all 500ms ease-in-out;
+}
+
+.navbar-tabs-container {
+    position: relative;
+    min-width: 40%;
+}
+
+.navbar-tabs ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: absolute;
+    right: 2px;
+    bottom: 1rem;
+}
+
+.navbar-tabs li {
+    list-style: none;
+}
+
+.navbar-tabs li a {
+    text-decoration: none;
+    color: #999;
+    padding-right: 2rem;
+    display: block;
+    font: bold 95%/100% Arial, Helvetica, sans-serif;
+}
+
+.navbar-tabs li a:hover {
+    color: black;
+}
+
+/*
+small navbar
+*/
+.small-nav {
+    height: 50px;
+}
+
+.small-brand-name {
+    font-size: 26px;
+}
+
+.small-brand-title {
+    display: none;
+}
+
+/* close navbar  */
+.up {
+    transform: translateY(-55px);
+}
+
+/* Hamburger Stuff */
+.hamburger-button {
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.hamburger-button .hamburger-button-line {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .navbar-tabs-container {
+        min-width: 20%;
+    }
+
+    .hamburger-button {
+        display: flex;
+    }
+
+    .navbar-tabs {
+        display: none;
+        width: 100%;
+    }
+
+
+    .navbar-tabs ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-tabs li {
+        text-align: center;
+    }
+
+    .navbar-tabs li a {
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-tabs.hamburger-active {
+        display: flex;
+    }
+}
